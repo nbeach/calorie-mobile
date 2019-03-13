@@ -1,15 +1,18 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
-import {Home} from "./src/component/presentation/Home";
-
+import {StyleSheet, View} from 'react-native';
+import {Provider} from "react-redux"
+import {initializeStore} from "./src/store/store";
+import {HomeContainer} from "./src/component/container/HomeContainer";
 
 interface Props {}
 export default class App extends Component<Props> {
   render() {
     return (
-      <View style={styles.container}>
-        <Home></Home>
-      </View>
+      <Provider store={initializeStore()}>
+        <View style={styles.container}>
+          <HomeContainer></HomeContainer>
+        </View>
+      </Provider>
     );
   }
 }
