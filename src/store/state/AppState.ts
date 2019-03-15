@@ -1,6 +1,7 @@
-import {HelloState} from "./HelloState";
+import {ItemState} from "./ItemState";
 
 export interface AppState {
-    hello: HelloState
+    items: ItemState[],
+    addItem: ItemState
 }
 

@@ -1,8 +1,10 @@
 import {AppState} from "./AppState";
 
 export const DEFAULT_STATE: AppState = {
-    hello: {
-        message: "Hello World"
+    items: [{ name: "Something", calories: 1000}],
+    addItem: {
+        name: "",
+        calories: 0
     }
 }
 

@@ -1,17 +1,22 @@
 import React from 'react';
-import {AddItem} from "./AddItem";
 import {ItemList} from "./ItemList";
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {AppState} from "../../store/state/AppState";
+import {AddItemContainer} from "../container/AddItemContainer";
 
 export interface HomeProps extends AppState{
 
 }
 
 export const Home = (props: HomeProps) => {
-    return <View>
-        <Text>{props.hello.message}</Text>
-        <AddItem></AddItem>
-        <ItemList/>
+    return <View style={styles.container}>
+        <ItemList items={props.items}/>
+        <AddItemContainer></AddItemContainer>
     </View>
 };
+
+
+const styles = StyleSheet.create({
+    container: {
+    },
+});

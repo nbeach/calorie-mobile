@@ -1,12 +1,30 @@
 import React from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
+import {ItemState} from "../../store/state/ItemState";
+import {border} from "../../StyleUtil";
 
 export interface ItemListProps {
-
+    items: ItemState[]
 }
 
 export const ItemList = (props: ItemListProps) => {
-    return <View>
-       <Text>Items:</Text>
+    return <View style={styles.container}>
+        {props.items.map(item => <Text key={item.name} style={styles.item}>{item.name}</Text>)}
     </View>
 };
+
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: "center",
+    },
+    item: {
+        padding: 10,
+        width: "100%",
+        textAlign: "center",
+        fontSize: 18,
+        ...border(1, "solid", "#DDDDDD")
+    },
+
+});
