@@ -1,7 +1,7 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {ItemState} from "../../store/state/ItemState";
-import {border} from "../../StyleUtil";
+import {border} from "../../util/StyleUtil";
 
 export interface ItemListProps {
     items: ItemState[]
@@ -9,7 +9,7 @@ export interface ItemListProps {
 
 export const ItemList = (props: ItemListProps) => {
     return <View style={styles.container}>
-        {props.items.map(item => <Text key={item.name} style={styles.item}>{item.name}</Text>)}
+        {/*{props.items.map(item => <Text key={item.name} style={styles.item}>{item.name}</Text>)}*/}
     </View>
 };
 
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         width: "100%",
         textAlign: "center",
         fontSize: 18,
-        ...border(1, "solid", "#DDDDDD")
+        ...border(1, "solid", "#AAAAAA")
     },
 
 });

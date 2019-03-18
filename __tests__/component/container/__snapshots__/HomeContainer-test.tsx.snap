@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home displays the items and allows adding items 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "stretch",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "space-evenly",
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#e4ebee",
+        "flexDirection": "row",
+        "justifyContent": "space-between",
+        "padding": 10,
+      }
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      placeholder="Item"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "borderBottomWidth": 1,
+          "borderColor": "#AAAAAA",
+          "borderStyle": "solid",
+          "fontSize": 18,
+          "width": "60%",
+        }
+      }
+      underlineColorAndroid="transparent"
+    />
+    <TextInput
+      allowFontScaling={true}
+      keyboardType="numeric"
+      placeholder="Cals"
+      rejectResponderTermination={true}
+      style={
+        Object {
+          "borderBottomWidth": 1,
+          "borderColor": "#AAAAAA",
+          "borderStyle": "solid",
+          "fontSize": 18,
+          "width": "15%",
+        }
+      }
+      underlineColorAndroid="transparent"
+    />
+    <View
+      accessible={true}
+      isTVSelectable={true}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#1b5fff",
+          "borderColor": "#EEEEEE",
+          "borderStyle": "solid",
+          "borderWidth": 1,
+          "fontSize": 18,
+          "justifyContent": "center",
+          "opacity": 1,
+          "width": "15%",
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#FFFFFF",
+            "fontSize": 18,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        +
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+      }
+    }
+  />
+</View>
+`;

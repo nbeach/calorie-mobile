@@ -1,5 +1,6 @@
 import React from 'react';
-import {Button, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
+import {border} from "../../util/StyleUtil";
 
 export interface AddItemStateProps {
     readonly name: string
@@ -26,18 +27,19 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        padding: 10
+        padding: 10,
+        backgroundColor: "#e4ebee"
     },
     item: {
         width: "60%",
-        borderColor: "#EEEEEE",
+        borderColor: "#AAAAAA",
         borderBottomWidth: 1,
         borderStyle: "solid",
         fontSize: 18
     },
     calories: {
         width: "15%",
-        borderColor: "#EEEEEE",
+        borderColor: "#AAAAAA",
         borderBottomWidth: 1,
         borderStyle: "solid",
         fontSize: 18
@@ -47,12 +49,8 @@ const styles = StyleSheet.create({
         fontSize: 18,
         alignItems: "center",
         backgroundColor: "#1b5fff",
-        borderColor: "#EEEEEE",
-        borderWidth: 1,
-        borderStyle: "solid",
-        justifyContent: "center"
-
-
+        justifyContent: "center",
+        ...border(1, "solid", "#EEEEEE"),
     },
     buttonText: {
         color: "#FFFFFF",
