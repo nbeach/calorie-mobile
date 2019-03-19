@@ -7,7 +7,7 @@ import {AddItemContainer} from "../container/AddItemContainer"
 export const Home = (props: AppState) =>
     <View style={styles.container}>
         <AddItemContainer/>
-        <ItemList items={props.items}/>
+        <ItemList items={props.items} />
     </View>
 
 

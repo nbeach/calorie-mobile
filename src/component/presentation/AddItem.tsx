@@ -8,13 +8,14 @@ export interface AddItemStateProps {
 }
 
 export interface AddItemDispatchProps {
-    readonly addItem: (name: string, calories: number) => void
+    readonly addItem: (name: string, calories: number) => void,
+    readonly itemNameChanged: (name: string) => void
 }
 
-export const AddItem = ({addItem, name, calories}: AddItemStateProps & AddItemDispatchProps) =>
+export const AddItem = ({addItem, itemNameChanged, name, calories}: AddItemStateProps & AddItemDispatchProps) =>
     <View style={styles.container}>
-        <TextInput style={styles.item} placeholder={"Item"}/>
-        <TextInput keyboardType="numeric" style={styles.calories} placeholder={"Cals"}/>
+        <TextInput style={styles.item} placeholder={"Item"} value={name} onChangeText={text => itemNameChanged(text)} />
+        <TextInput keyboardType="numeric" style={styles.calories} placeholder={"Cals"} />
 
         <TouchableOpacity style={styles.button} onPress={() => addItem(name, calories)}>
             <Text style={styles.buttonText}>+</Text>

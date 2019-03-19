@@ -31,6 +31,7 @@ exports[`App displays the app 1`] = `
     >
       <TextInput
         allowFontScaling={true}
+        onChangeText={[Function]}
         placeholder="Item"
         rejectResponderTermination={true}
         style={
@@ -43,6 +44,7 @@ exports[`App displays the app 1`] = `
           }
         }
         underlineColorAndroid="transparent"
+        value=""
       />
       <TextInput
         allowFontScaling={true}
@@ -133,36 +135,6 @@ exports[`App displays the app 1`] = `
         }
       >
         Chicken
-      </Text>
-      <Text
-        style={
-          Object {
-            "borderColor": "#AAAAAA",
-            "borderStyle": "solid",
-            "borderWidth": 1,
-            "fontSize": 18,
-            "padding": 10,
-            "textAlign": "center",
-            "width": "100%",
-          }
-        }
-      >
-        Beef
-      </Text>
-      <Text
-        style={
-          Object {
-            "borderColor": "#AAAAAA",
-            "borderStyle": "solid",
-            "borderWidth": 1,
-            "fontSize": 18,
-            "padding": 10,
-            "textAlign": "center",
-            "width": "100%",
-          }
-        }
-      >
-        Dinner
       </Text>
     </View>
   </View>

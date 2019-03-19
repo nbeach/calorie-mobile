@@ -13,6 +13,7 @@ exports[`AddItem displays the item form 1`] = `
 >
   <TextInput
     allowFontScaling={true}
+    onChangeText={[Function]}
     placeholder="Item"
     rejectResponderTermination={true}
     style={
@@ -25,6 +26,7 @@ exports[`AddItem displays the item form 1`] = `
       }
     }
     underlineColorAndroid="transparent"
+    value="Chicken"
   />
   <TextInput
     allowFontScaling={true}

@@ -23,6 +23,7 @@ exports[`Home displays the items and allows adding items 1`] = `
   >
     <TextInput
       allowFontScaling={true}
+      onChangeText={[Function]}
       placeholder="Item"
       rejectResponderTermination={true}
       style={
@@ -35,6 +36,7 @@ exports[`Home displays the items and allows adding items 1`] = `
         }
       }
       underlineColorAndroid="transparent"
+      value="Beef"
     />
     <TextInput
       allowFontScaling={true}
