@@ -1,8 +1,8 @@
-import {connect} from "react-redux";
-import {Home, HomeProps} from "../presentation/Home";
-import {AppState} from "../../store/state/AppState";
+import {connect} from "react-redux"
+import {Home} from "../presentation/Home"
+import {AppState} from "../../store/state/AppState"
 
-export const mapStateToProps = (state: AppState): HomeProps => state
+export const mapStateToProps = (state: AppState): AppState => state
 
 export const HomeContainer = connect(mapStateToProps)(Home)
 

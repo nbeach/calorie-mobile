@@ -1,4 +1,4 @@
-import {createActionFactory} from "./action-util";
+import {createActionFactory} from "./action-util"
 
 export interface AddItemAction {
     readonly name: string

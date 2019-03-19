@@ -1,7 +1,7 @@
-import {createStore} from "redux";
-import rootReducer from "./reducer/rootReducer";
+import {createStore} from "redux"
+import rootReducer from "./reducer/rootReducer"
 
-export function initializeStore () {
+export const initializeStore = () => {
     return createStore(rootReducer)
 }
 

@@ -1,7 +1,8 @@
-import {Action} from "redux";
+import {Action} from "redux"
 
 export interface ActionFactory<T> {
     (parameters: T): Action & T
+
     readonly _type: string
 }
 
@@ -11,6 +12,6 @@ export const createActionFactory = <T>(type: string): ActionFactory<T> => {
     return factory
 }
 
-export function isAction<T>(factory: ActionFactory<T>, action: Action | T): action is T {
+export const isAction = <T>(factory: ActionFactory<T>, action: Action | T): action is T => {
     return (action as Action).type === factory._type
 }

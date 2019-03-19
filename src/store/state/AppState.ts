@@ -1,7 +1,7 @@
-import {ItemState} from "./ItemState";
+import {ItemState} from "./ItemState"
 
 export interface AppState {
-    items: ItemState[],
-    addItem: ItemState
+    readonly items: ReadonlyArray<ItemState>,
+    readonly addItem: ItemState
 }
 
