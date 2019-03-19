@@ -11,8 +11,8 @@ export interface AddItemDispatchProps {
     readonly addItem: (name: string, calories: number) => void
 }
 
-export const AddItem = ({addItem, name, calories}: AddItemStateProps & AddItemDispatchProps) => {
-    return <View style={styles.container}>
+export const AddItem = ({addItem, name, calories}: AddItemStateProps & AddItemDispatchProps) =>
+    <View style={styles.container}>
         <TextInput style={styles.item} placeholder={"Item"}/>
         <TextInput keyboardType="numeric" style={styles.calories} placeholder={"Cals"}/>
 
@@ -20,7 +20,6 @@ export const AddItem = ({addItem, name, calories}: AddItemStateProps & AddItemDi
             <Text style={styles.buttonText}>+</Text>
         </TouchableOpacity>
     </View>
-}
 
 
 const styles = StyleSheet.create({

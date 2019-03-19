@@ -4,12 +4,11 @@ import {StyleSheet, View} from "react-native"
 import {AppState} from "../../store/state/AppState"
 import {AddItemContainer} from "../container/AddItemContainer"
 
-export const Home = (props: AppState) => {
-    return <View style={styles.container}>
-        <AddItemContainer></AddItemContainer>
+export const Home = (props: AppState) =>
+    <View style={styles.container}>
+        <AddItemContainer/>
         <ItemList items={props.items}/>
     </View>
-}
 
 
 const styles = StyleSheet.create({

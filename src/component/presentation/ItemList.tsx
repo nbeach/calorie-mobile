@@ -7,11 +7,10 @@ export interface ItemListProps {
     readonly items: ReadonlyArray<ItemState>
 }
 
-export const ItemList = (props: ItemListProps) => {
-    return <View style={styles.container}>
+export const ItemList = (props: ItemListProps) =>
+    <View style={styles.container}>
         {props.items.map(item => <Text key={item.name} style={styles.item}>{item.name}</Text>)}
     </View>
-}
 
 
 const styles = StyleSheet.create({
