@@ -1,29 +1,32 @@
 import React from "react"
 import {StyleSheet, Text, View} from "react-native"
 import {ItemState} from "../../store/state/ItemState"
-import {border} from "../../util/StyleUtil"
 
 export interface ItemListProps {
     readonly items: ReadonlyArray<ItemState>
 }
 
 export const ItemList = (props: ItemListProps) =>
-    <View style={styles.container}>
-        {props.items.map(item => <Text key={item.name} style={styles.item}>{item.name}</Text>)}
+    <View>
+        {props.items.map(item =>
+            <View key={item.name} style={styles.itemContainer}>
+                <Text style={styles.item}>{item.name}</Text>
+                <Text style={styles.item}>{item.calories.toString()}</Text>
+            </View>,
+        )}
     </View>
 
-
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: "center",
+    itemContainer: {
+        padding: 10,
+        flexDirection: "row",
+        justifyContent: "space-between",
+
+        borderColor: "#AAAAAA",
+        borderStyle: "solid",
+        borderBottomWidth: 1,
     },
     item: {
-        padding: 10,
-        width: "100%",
-        textAlign: "center",
         fontSize: 18,
-        ...border(1, "solid", "#AAAAAA"),
     },
-
 })

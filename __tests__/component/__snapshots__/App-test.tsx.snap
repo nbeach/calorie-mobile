@@ -9,16 +9,7 @@ exports[`App displays the app 1`] = `
     }
   }
 >
-  <View
-    style={
-      Object {
-        "alignItems": "stretch",
-        "flex": 1,
-        "flexDirection": "column",
-        "justifyContent": "space-evenly",
-      }
-    }
-  >
+  <View>
     <View
       style={
         Object {
@@ -43,12 +34,14 @@ exports[`App displays the app 1`] = `
             "width": "60%",
           }
         }
+        testID="NameField"
         underlineColorAndroid="transparent"
         value=""
       />
       <TextInput
         allowFontScaling={true}
         keyboardType="numeric"
+        onChangeText={[Function]}
         placeholder="Cals"
         rejectResponderTermination={true}
         style={
@@ -60,6 +53,7 @@ exports[`App displays the app 1`] = `
             "width": "15%",
           }
         }
+        testID="CalorieField"
         underlineColorAndroid="transparent"
       />
       <View
@@ -84,6 +78,7 @@ exports[`App displays the app 1`] = `
             "width": "15%",
           }
         }
+        testID="AddButton"
       >
         <Text
           style={
@@ -98,44 +93,69 @@ exports[`App displays the app 1`] = `
         </Text>
       </View>
     </View>
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-        }
-      }
-    >
-      <Text
+    <View>
+      <View
         style={
           Object {
+            "borderBottomWidth": 1,
             "borderColor": "#AAAAAA",
             "borderStyle": "solid",
-            "borderWidth": 1,
-            "fontSize": 18,
+            "flexDirection": "row",
+            "justifyContent": "space-between",
             "padding": 10,
-            "textAlign": "center",
-            "width": "100%",
           }
         }
       >
-        Carrots
-      </Text>
-      <Text
+        <Text
+          style={
+            Object {
+              "fontSize": 18,
+            }
+          }
+        >
+          Carrots
+        </Text>
+        <Text
+          style={
+            Object {
+              "fontSize": 18,
+            }
+          }
+        >
+          1000
+        </Text>
+      </View>
+      <View
         style={
           Object {
+            "borderBottomWidth": 1,
             "borderColor": "#AAAAAA",
             "borderStyle": "solid",
-            "borderWidth": 1,
-            "fontSize": 18,
+            "flexDirection": "row",
+            "justifyContent": "space-between",
             "padding": 10,
-            "textAlign": "center",
-            "width": "100%",
           }
         }
       >
-        Chicken
-      </Text>
+        <Text
+          style={
+            Object {
+              "fontSize": 18,
+            }
+          }
+        >
+          Chicken
+        </Text>
+        <Text
+          style={
+            Object {
+              "fontSize": 18,
+            }
+          }
+        >
+          500
+        </Text>
+      </View>
     </View>
   </View>
 </View>

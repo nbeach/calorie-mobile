@@ -1,16 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home displays the items and allows adding items 1`] = `
-<View
-  style={
-    Object {
-      "alignItems": "stretch",
-      "flex": 1,
-      "flexDirection": "column",
-      "justifyContent": "space-evenly",
-    }
-  }
->
+exports[`Connect displays the items and allows adding items 1`] = `
+<View>
   <View
     style={
       Object {
@@ -35,12 +26,14 @@ exports[`Home displays the items and allows adding items 1`] = `
           "width": "60%",
         }
       }
+      testID="NameField"
       underlineColorAndroid="transparent"
       value="Beef"
     />
     <TextInput
       allowFontScaling={true}
       keyboardType="numeric"
+      onChangeText={[Function]}
       placeholder="Cals"
       rejectResponderTermination={true}
       style={
@@ -52,6 +45,7 @@ exports[`Home displays the items and allows adding items 1`] = `
           "width": "15%",
         }
       }
+      testID="CalorieField"
       underlineColorAndroid="transparent"
     />
     <View
@@ -76,6 +70,7 @@ exports[`Home displays the items and allows adding items 1`] = `
           "width": "15%",
         }
       }
+      testID="AddButton"
     >
       <Text
         style={
@@ -90,29 +85,38 @@ exports[`Home displays the items and allows adding items 1`] = `
       </Text>
     </View>
   </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flex": 1,
-      }
-    }
-  >
-    <Text
+  <View>
+    <View
       style={
         Object {
+          "borderBottomWidth": 1,
           "borderColor": "#AAAAAA",
           "borderStyle": "solid",
-          "borderWidth": 1,
-          "fontSize": 18,
+          "flexDirection": "row",
+          "justifyContent": "space-between",
           "padding": 10,
-          "textAlign": "center",
-          "width": "100%",
         }
       }
     >
-      Chicken
-    </Text>
+      <Text
+        style={
+          Object {
+            "fontSize": 18,
+          }
+        }
+      >
+        Chicken
+      </Text>
+      <Text
+        style={
+          Object {
+            "fontSize": 18,
+          }
+        }
+      >
+        100
+      </Text>
+    </View>
   </View>
 </View>
 `;
