@@ -57,6 +57,7 @@ exports[`App displays the app 1`] = `
         }
         testID="CalorieField"
         underlineColorAndroid="transparent"
+        value=""
       />
       <View
         accessible={true}

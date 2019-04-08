@@ -48,6 +48,7 @@ exports[`Connect displays the items and allows adding items 1`] = `
     }
     testID="CalorieField"
     underlineColorAndroid="transparent"
+    value="200"
   />
   <View
     accessible={true}

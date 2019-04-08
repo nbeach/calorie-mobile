@@ -10,7 +10,7 @@ describe(HomeContainer.name, () => {
 
     it("displays the items and allows adding items", () => {
         const state: AppState = {
-            addItem:  {name: "Beef", calories: 200},
+            addItem:  {name: "Beef", calories: "200"},
             items: [{name: "Chicken", calories: 100}],
         }
 

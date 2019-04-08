@@ -14,7 +14,7 @@ describe(AddItemContainer.name, () => {
 
     it("displays the items and allows adding items", () => {
         const state: AppState = {
-            addItem: {name: "Beef", calories: 200},
+            addItem: {name: "Beef", calories: "200"},
             items: [{name: "Chicken", calories: 100}],
         }
 
@@ -39,7 +39,7 @@ describe(AddItemContainer.name, () => {
 
         beforeEach(() => {
             state = {
-                addItem: {name: "Beef", calories: 200},
+                addItem: {name: "Beef", calories: "200"},
                 items: [{name: "Chicken", calories: 100}],
             }
 
@@ -59,7 +59,7 @@ describe(AddItemContainer.name, () => {
 
         it("the add item button is pressed adds an item", () => {
             instance(AddItemTestIds.AddButton, tree).props.onPress()
-            expect(store.dispatch).toHaveBeenCalledWith(addItemAction({name: "Beef", calories: 200}))
+            expect(store.dispatch).toHaveBeenCalledWith(addItemAction({name: "Beef", calories: "200"}))
         })
 
         it("name text changes updates the name text", () => {
@@ -84,7 +84,7 @@ describe(AddItemContainer.name, () => {
         it("calorie field is submitted adds an item", () => {
             instance(AddItemTestIds.CalorieField, tree).props.onSubmitEditing(null as any)
 
-            expect(store.dispatch).toHaveBeenCalledWith(addItemAction({name: "Beef", calories: 200}))
+            expect(store.dispatch).toHaveBeenCalledWith(addItemAction({name: "Beef", calories: "200"}))
         })
 
     })

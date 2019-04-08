@@ -8,7 +8,7 @@ import {node} from "../../../test-util/SelectionUtil"
 describe(AddItem.name, () => {
 
     it("displays the item form", () => {
-        const tree = renderer.create(<AddItem name={"Chicken"} calories={500} addItem={jest.fn()} itemNameChanged={jest.fn()} itemCaloriesChanged={jest.fn()} />).toJSON()
+        const tree = renderer.create(<AddItem name={"Chicken"} calories={"500"} addItem={jest.fn()} itemNameChanged={jest.fn()} itemCaloriesChanged={jest.fn()} />).toJSON()
         expect(tree).toMatchSnapshot()
     })
 
@@ -19,7 +19,7 @@ describe(AddItem.name, () => {
             addItem = jest.fn()
             itemNameChanged = jest.fn()
             itemCaloriesChanged = jest.fn()
-            wrapper = shallow(<AddItem name={"Chicken"} calories={500} addItem={addItem} itemNameChanged={itemNameChanged} itemCaloriesChanged={itemCaloriesChanged} />)
+            wrapper = shallow(<AddItem name={"Chicken"} calories={"500"} addItem={addItem} itemNameChanged={itemNameChanged} itemCaloriesChanged={itemCaloriesChanged} />)
         })
 
         it("the add item button is pressed adds an item", () => {

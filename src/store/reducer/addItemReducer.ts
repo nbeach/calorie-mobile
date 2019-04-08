@@ -1,12 +1,12 @@
 import {DEFAULT_STATE} from "../state/default-state"
 import {Action} from "redux"
-import {ItemState} from "../state/ItemState"
 import {isAction} from "../action/action-util"
 import {addItemNameChangedAction} from "../action/AddItemNameChangedAction"
 import {addItemCaloriesChangedAction} from "../action/AddItemCaloriesChangedAction"
 import {addItemAction} from "../action/AddItemAction"
+import {AddItemState} from "../state/AddItemState";
 
-export const addItemReducer = (previousState: ItemState = DEFAULT_STATE.addItem, action: Action): ItemState => {
+export const addItemReducer = (previousState: AddItemState = DEFAULT_STATE.addItem, action: Action): AddItemState => {
 
     if (isAction(addItemNameChangedAction, action)) {
         return {
@@ -18,7 +18,7 @@ export const addItemReducer = (previousState: ItemState = DEFAULT_STATE.addItem,
     if (isAction(addItemCaloriesChangedAction, action)) {
         return {
             ...previousState,
-            calories: Number(action.calories),
+            calories: action.calories,
         }
     }
 
@@ -27,7 +27,7 @@ export const addItemReducer = (previousState: ItemState = DEFAULT_STATE.addItem,
         return {
             ...previousState,
             name: "",
-            calories: 0,
+            calories: "",
         }
     }
 

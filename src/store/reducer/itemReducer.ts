@@ -8,7 +8,7 @@ export const itemReducer = (previousState: ReadonlyArray<ItemState> = DEFAULT_ST
 
     if (isAction(addItemAction, action)) {
         const {name, calories} = action
-        return [...previousState, {name, calories}]
+        return [...previousState, {name, calories: Number(calories)}]
     }
 
     return previousState

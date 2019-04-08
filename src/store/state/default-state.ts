@@ -7,7 +7,7 @@ export const DEFAULT_STATE: AppState = {
     ],
     addItem: {
         name: "",
-        calories: 0,
+        calories: "",
     },
 }
 

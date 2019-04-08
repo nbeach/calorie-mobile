@@ -4,11 +4,11 @@ import {border} from "../../util/StyleUtil"
 
 export interface AddItemStateProps {
     readonly name: string
-    readonly calories: number
+    readonly calories: string
 }
 
 export interface AddItemDispatchProps {
-    readonly addItem: (name: string, calories: number) => void,
+    readonly addItem: (name: string, calories: string) => void,
     readonly itemNameChanged: (name: string) => void
     readonly itemCaloriesChanged: (calories: string) => void
 }
@@ -18,14 +18,15 @@ export const AddItem = ({addItem, itemNameChanged, itemCaloriesChanged, name, ca
 
     return <View style={styles.container}>
         <TextInput
+            value={name}
             testID={AddItemTestIds.NameField}
             style={styles.item}
             placeholder={"Item"}
-            value={name}
             onChangeText={text => itemNameChanged(text)}
             onSubmitEditing={() => calorieInput!.focus()}/>
         <TextInput
             ref={input => calorieInput = input}
+            value={calories}
             testID={AddItemTestIds.CalorieField}
             keyboardType="numeric"
             style={styles.calories}
