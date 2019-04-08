@@ -9,7 +9,6 @@ import {instance} from "../../../test-util/SelectionUtil"
 import {addItemAction} from "../../../src/store/action/AddItemAction"
 import {addItemNameChangedAction} from "../../../src/store/action/AddItemNameChangedAction"
 import {addItemCaloriesChangedAction} from "../../../src/store/action/AddItemCaloriesChangedAction"
-import {HomeContainer} from "../../../src/component/container/HomeContainer"
 
 describe(AddItemContainer.name, () => {
 
@@ -53,14 +52,13 @@ describe(AddItemContainer.name, () => {
 
             tree = renderer.create(
                 <Provider store={store}>
-                    <HomeContainer state/>
+                    <AddItemContainer state/>
                 </Provider>,
             )
         })
 
         it("the add item button is pressed adds an item", () => {
             instance(AddItemTestIds.AddButton, tree).props.onPress()
-
             expect(store.dispatch).toHaveBeenCalledWith(addItemAction({name: "Beef", calories: 200}))
         })
 
@@ -72,6 +70,21 @@ describe(AddItemContainer.name, () => {
         it("calorie text changes updates the calorie text", () => {
             instance(AddItemTestIds.CalorieField, tree).props.onChangeText("200")
             expect(store.dispatch).toHaveBeenCalledWith(addItemCaloriesChangedAction({calories: "200"}))
+        })
+
+        it("name field is submitted focuses on the calorie field", () => {
+            const calorieField = instance(AddItemTestIds.CalorieField, tree).instance
+            calorieField.focus = jest.fn()
+
+            instance(AddItemTestIds.NameField, tree).props.onSubmitEditing(null as any)
+
+            expect(calorieField.focus).toHaveBeenCalled()
+        })
+
+        it("calorie field is submitted adds an item", () => {
+            instance(AddItemTestIds.CalorieField, tree).props.onSubmitEditing(null as any)
+
+            expect(store.dispatch).toHaveBeenCalledWith(addItemAction({name: "Beef", calories: 200}))
         })
 
     })

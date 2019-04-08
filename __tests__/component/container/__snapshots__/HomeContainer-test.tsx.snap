@@ -15,6 +15,7 @@ exports[`Connect displays the items and allows adding items 1`] = `
     <TextInput
       allowFontScaling={true}
       onChangeText={[Function]}
+      onSubmitEditing={[Function]}
       placeholder="Item"
       rejectResponderTermination={true}
       style={
@@ -34,6 +35,7 @@ exports[`Connect displays the items and allows adding items 1`] = `
       allowFontScaling={true}
       keyboardType="numeric"
       onChangeText={[Function]}
+      onSubmitEditing={[Function]}
       placeholder="Cals"
       rejectResponderTermination={true}
       style={

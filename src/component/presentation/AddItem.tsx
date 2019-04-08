@@ -13,15 +13,34 @@ export interface AddItemDispatchProps {
     readonly itemCaloriesChanged: (calories: string) => void
 }
 
-export const AddItem = ({addItem, itemNameChanged, itemCaloriesChanged, name, calories}: AddItemStateProps & AddItemDispatchProps) =>
-    <View style={styles.container}>
-        <TextInput testID={AddItemTestIds.NameField} style={styles.item} placeholder={"Item"} value={name} onChangeText={text => itemNameChanged(text)}/>
-        <TextInput testID={AddItemTestIds.CalorieField} keyboardType="numeric" style={styles.calories} placeholder={"Cals"}  onChangeText={text => itemCaloriesChanged(text)} />
+export const AddItem = ({addItem, itemNameChanged, itemCaloriesChanged, name, calories}: AddItemStateProps & AddItemDispatchProps) => {
+    let calorieInput: TextInput | null
 
-        <TouchableOpacity testID={AddItemTestIds.AddButton} style={styles.button} onPress={() => addItem(name, calories)}>
+    return <View style={styles.container}>
+        <TextInput
+            testID={AddItemTestIds.NameField}
+            style={styles.item}
+            placeholder={"Item"}
+            value={name}
+            onChangeText={text => itemNameChanged(text)}
+            onSubmitEditing={() => calorieInput!.focus()}/>
+        <TextInput
+            ref={input => calorieInput = input}
+            testID={AddItemTestIds.CalorieField}
+            keyboardType="numeric"
+            style={styles.calories}
+            placeholder={"Cals"}
+            onChangeText={text => itemCaloriesChanged(text)}
+            onSubmitEditing={() => addItem(name, calories)}/>
+
+        <TouchableOpacity
+            testID={AddItemTestIds.AddButton}
+            style={styles.button}
+            onPress={() => addItem(name, calories)}>
             <Text style={styles.buttonText}>+</Text>
         </TouchableOpacity>
     </View>
+}
 
 const styles = StyleSheet.create({
     container: {
