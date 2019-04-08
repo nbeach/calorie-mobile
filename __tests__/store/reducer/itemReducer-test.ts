@@ -3,6 +3,7 @@ import {addItemAction} from "../../../src/store/action/AddItemAction"
 import {createItemState} from "../../../test-util/factory/createItemState"
 import {ItemState} from "../../../src/store/state/ItemState"
 import {createActionFactory} from "../../../src/store/action/action-util"
+import {removeItemAction} from "../../../src/store/action/RemoveItemAction"
 
 describe(itemReducer.name, () => {
 
@@ -22,6 +23,22 @@ describe(itemReducer.name, () => {
             expect(newItem.name).toEqual("Chicken")
             expect(newItem.calories).toEqual(200)
             expect(newItem.id).toHaveLength(36)
+        })
+
+    })
+
+    describe(`on ${removeItemAction.name}`, () => {
+
+        it("removes the item from the list", () => {
+            const priorState: ReadonlyArray<ItemState> =  [
+                createItemState(),
+                createItemState({id: "11111111-1111-1111-1111-111111111111"}),
+            ]
+            const newState = itemReducer(priorState, removeItemAction({ id: "11111111-1111-1111-1111-111111111111" }))
+
+            expect(newState).toEqual([
+                createItemState(),
+            ])
         })
 
     })
