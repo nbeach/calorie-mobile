@@ -9,14 +9,14 @@ import {instance} from "../../../test-util/SelectionUtil"
 import {addItemAction} from "../../../src/store/action/AddItemAction"
 import {addItemNameChangedAction} from "../../../src/store/action/AddItemNameChangedAction"
 import {addItemCaloriesChangedAction} from "../../../src/store/action/AddItemCaloriesChangedAction"
+import {createAppState} from "../../../test-util/factory/createAppState"
 
 describe(AddItemContainer.name, () => {
 
     it("displays the items and allows adding items", () => {
-        const state: AppState = {
+        const state = createAppState({
             addItem: {name: "Beef", calories: "200"},
-            items: [{name: "Chicken", calories: 100}],
-        }
+        })
 
         const store: Store<AppState> = {
             getState: () => state,
@@ -38,10 +38,9 @@ describe(AddItemContainer.name, () => {
         let tree: ReactTestRenderer, store: Store<AppState>, state: AppState
 
         beforeEach(() => {
-            state = {
+            state = createAppState({
                 addItem: {name: "Beef", calories: "200"},
-                items: [{name: "Chicken", calories: 100}],
-            }
+            })
 
             store = {
                 getState: () => state,

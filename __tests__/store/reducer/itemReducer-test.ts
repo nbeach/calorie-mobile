@@ -10,15 +10,18 @@ describe(itemReducer.name, () => {
 
         it("adds the new item to the list", () => {
             const priorState: ReadonlyArray<ItemState> =  [
-                createItemState({ name: "Beef", calories: 100 }),
+                createItemState(),
             ]
-            const newState = itemReducer(priorState, addItemAction({ name: "Chicken", calories: 200 }))
+            const newState = itemReducer(priorState, addItemAction({ name: "Chicken", calories: "200" }))
 
-            expect(newState).toEqual([
-                createItemState({ name: "Beef", calories: 100 }),
-                createItemState({ name: "Chicken", calories: 200 }),
-            ])
+            expect(newState).toHaveLength(2)
 
+            const [oldItem, newItem] = newState
+            expect(oldItem).toEqual(createItemState())
+
+            expect(newItem.name).toEqual("Chicken")
+            expect(newItem.calories).toEqual(200)
+            expect(newItem.id).toHaveLength(36)
         })
 
     })

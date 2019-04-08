@@ -2,12 +2,12 @@ import React from "react"
 import {StyleSheet, View} from "react-native"
 import {Provider} from "react-redux"
 import {initializeStore} from "../store/store"
-import {HomeContainer} from "./container/HomeContainer"
+import {Home} from "./presentation/Home"
 
 export const App = () =>
     <Provider store={initializeStore()}>
         <View style={styles.container}>
-            <HomeContainer></HomeContainer>
+            <Home/>
         </View>
     </Provider>
 

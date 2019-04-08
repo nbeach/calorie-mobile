@@ -127,6 +127,26 @@ exports[`App displays the app 1`] = `
         >
           1000
         </Text>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+          testID="RemoveButton"
+        >
+          <Text>
+            X
+          </Text>
+        </View>
       </View>
       <View
         style={
@@ -158,6 +178,26 @@ exports[`App displays the app 1`] = `
         >
           500
         </Text>
+        <View
+          accessible={true}
+          isTVSelectable={true}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+          testID="RemoveButton"
+        >
+          <Text>
+            X
+          </Text>
+        </View>
       </View>
     </View>
   </View>

@@ -3,30 +3,27 @@ import {addItemNameChangedAction} from "../../../src/store/action/AddItemNameCha
 import {createActionFactory} from "../../../src/store/action/action-util"
 import {addItemCaloriesChangedAction} from "../../../src/store/action/AddItemCaloriesChangedAction"
 import {addItemAction} from "../../../src/store/action/AddItemAction"
-import {createAddItemState} from "../../../test-util/factory/createAddItemState";
+import {createAddItemState} from "../../../test-util/factory/createAddItemState"
 
 describe(addItemReducer.name, () => {
 
     describe(`on ${addItemNameChangedAction.name}`, () => {
 
         it("updates the name of the item being added", () => {
-            const priorState = createAddItemState({ calories: "100" })
+            const newState = addItemReducer(createAddItemState(), addItemNameChangedAction({ name: "Chicken" }))
 
-            const newState = addItemReducer(priorState, addItemNameChangedAction({ name: "Chicken" }))
-
-            expect(newState).toEqual(createAddItemState({ name: "Chicken", calories: "100" }))
+            expect(newState).toEqual(createAddItemState({ name: "Chicken"}))
         })
 
     })
 
     describe(`on ${addItemCaloriesChangedAction.name}`, () => {
 
-        it("updates the name of the item being added", () => {
-            const priorState = createAddItemState({ name: "Chicken" })
+        it("updates the calories of the item being added", () => {
 
-            const newState = addItemReducer(priorState, addItemCaloriesChangedAction({ calories: "100" }))
+            const newState = addItemReducer(createAddItemState(), addItemCaloriesChangedAction({ calories: "100" }))
 
-            expect(newState).toEqual(createAddItemState({ name: "Chicken", calories: "100" }))
+            expect(newState).toEqual(createAddItemState({ calories: "100" }))
         })
 
     })
@@ -36,7 +33,7 @@ describe(addItemReducer.name, () => {
         it("clears the newly added item from the form", () => {
             const priorState = createAddItemState({ name: "Beef", calories: "100" })
 
-            const newState = addItemReducer(priorState, addItemAction({ name: "Chicken", calories: 200 }))
+            const newState = addItemReducer(priorState, addItemAction({ name: "Chicken", calories: "200" }))
 
             expect(newState).toEqual(createAddItemState({ name: "", calories: "" }))
 

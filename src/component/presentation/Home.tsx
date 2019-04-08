@@ -1,13 +1,11 @@
 import React from "react"
-import {ItemList} from "./ItemList"
 import {View} from "react-native"
-import {AppState} from "../../store/state/AppState"
 import {AddItemContainer} from "../container/AddItemContainer"
+import {ItemListContainer} from "../container/ItemListContainer"
 
-export type HomeStateProps = AppState
 
-export const Home = (props: HomeStateProps) =>
+export const Home = () =>
     <View>
         <AddItemContainer/>
-        <ItemList items={props.items} />
+        <ItemListContainer/>
     </View>

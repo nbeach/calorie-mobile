@@ -1,17 +1,26 @@
 import React from "react"
-import {StyleSheet, Text, View} from "react-native"
+import {StyleSheet, Text, TouchableOpacity, View} from "react-native"
 import {ItemState} from "../../store/state/ItemState"
 
 export interface ItemListProps {
     readonly items: ReadonlyArray<ItemState>
 }
 
-export const ItemList = (props: ItemListProps) =>
+export interface ItemListDispatchProps {
+    readonly removeItem: (id: string) => void
+}
+
+export const ItemList = ({items, removeItem}: ItemListProps & ItemListDispatchProps) =>
     <View>
-        {props.items.map(item =>
-            <View key={item.name} style={styles.itemContainer}>
+        {items.map(item =>
+            <View key={item.id} style={styles.itemContainer}>
                 <Text style={styles.item}>{item.name}</Text>
                 <Text style={styles.item}>{item.calories.toString()}</Text>
+                <TouchableOpacity key={item.id}
+                    testID={ItemListTestIds.RemoveButton}
+                    onPress={() => removeItem(item.id)}>
+                    <Text>X</Text>
+                </TouchableOpacity>
             </View>,
         )}
     </View>
@@ -30,3 +39,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
     },
 })
+
+export enum ItemListTestIds {
+    RemoveButton = "RemoveButton",
+}

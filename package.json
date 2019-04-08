@@ -16,7 +16,8 @@
     "react-native": "0.59.1",
     "react-navigation": "^3.3.2",
     "react-redux": "^6.0.1",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
@@ -27,6 +28,7 @@
     "@types/react-native": "^0.57.41",
     "@types/react-redux": "^7.0.3",
     "@types/react-test-renderer": "^16.8.1",
+    "@types/uuid": "^3.4.4",
     "babel-jest": "^24.5.0",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
