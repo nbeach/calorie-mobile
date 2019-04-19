@@ -51,7 +51,7 @@ describe(AddItemContainer.name, () => {
 
             tree = renderer.create(
                 <Provider store={store}>
-                    <AddItemContainer state/>
+                    <AddItemContainer/>
                 </Provider>,
             )
         })

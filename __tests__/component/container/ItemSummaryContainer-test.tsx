@@ -4,37 +4,39 @@ import renderer, {ReactTestRenderer} from "react-test-renderer"
 import {Provider} from "react-redux"
 import {AppState} from "../../../src/store/state/AppState"
 import {Store} from "redux"
-import {ItemListContainer} from "../../../src/component/container/ItemListContainer"
 import {instances} from "../../../test-util/SelectionUtil"
 import {ItemListTestIds} from "../../../src/component/presentation/ItemList"
 import {removeItemAction} from "../../../src/store/action/RemoveItemAction"
 import {createAppState} from "../../../test-util/factory/createAppState"
+import {ItemSummaryContainer} from "../../../src/component/container/ItemSummaryContainer";
+import {createItemState} from "../../../test-util/factory/createItemState";
+import {mockStore} from "../../../test-util/mockStore";
 
-describe(ItemListContainer.name, () => {
-    let tree: ReactTestRenderer, store: Store<AppState>, state: AppState
+describe(ItemSummaryContainer.name, () => {
+    let tree: ReactTestRenderer, store: Store<AppState>
 
     beforeEach(() => {
-        state = createAppState({
-            items: [
-                {id: "00000000-0000-0000-0000-000000000000", name: "Chicken", calories: 100},
-            ],
-        })
 
-        store = {
-            getState: () => state,
-            dispatch: jest.fn(),
-            subscribe: jest.fn(),
-            replaceReducer: jest.fn(),
-        }
+        store = mockStore(createAppState({
+            items: [
+                createItemState({id: "00000000-0000-0000-0000-000000000000", name: "Chicken", calories: 100}),
+                createItemState({id: "11111111-1111-1111-1111-111111111111", name: "Beef", calories: 200}),
+            ],
+            totalCalories: 500,
+        }))
 
         tree = renderer.create(
             <Provider store={store}>
-                <ItemListContainer state/>
+                <ItemSummaryContainer state/>
             </Provider>,
         )
     })
 
-    it("the add item button is pressed adds an item", () => {
+    it("presentation has not changed", () => {
+        expect(tree.toJSON()).toMatchSnapshot()
+    })
+
+    it("when the remove button is pressed removes the item", () => {
         instances(ItemListTestIds.RemoveButton, tree)[0].props.onPress()
         expect(store.dispatch).toHaveBeenCalledWith(removeItemAction({ id: "00000000-0000-0000-0000-000000000000"}))
     })
